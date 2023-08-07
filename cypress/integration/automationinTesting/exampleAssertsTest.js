@@ -47,7 +47,7 @@ context('Примеры использования различных видов
         cy.get('[data-testid="ContactName"]').should('be.empty')
         cy.get('[data-testid="ContactName"]').should('have.attr', 'placeholder', 'Name')
         cy.get('[data-testid="ContactName"]').should('have.class', 'form-control' )
-        cy.contains('Submit').should('have.css', 'color', '14')
+        cy.contains('Submit').should('have.css', 'color', 'rgb(0, 123, 255)')
     })
 
 
@@ -59,7 +59,7 @@ context('Примеры использования различных видов
         //проверка параметров запроса, которые отправляются как объект
         cy.wait('@message').should(xhr => {
             expect(xhr.request.body).have.property('description', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit')
-            expect(xhr.request.body).have.property('email', 'olja-0801@mail')
+            expect(xhr.request.body).have.property('email', 'olja-0801@mail.ru')
             expect(xhr.request.body).have.property('name', 'Petr Ivanov')
             expect(xhr.request.body).have.property('phone', '89833337878')
             expect(xhr.request.body).have.property('subject', 'room')
@@ -75,7 +75,7 @@ context('Примеры использования различных видов
 
         //проверка параметров ответа
         cy.wait('@message').should(xhr => {
-            expect(xhr.response.body).have.property('name', 'Petr Ivano')
+            expect(xhr.response.body).have.property('name', 'Petr Ivanov')
         })
 
     })

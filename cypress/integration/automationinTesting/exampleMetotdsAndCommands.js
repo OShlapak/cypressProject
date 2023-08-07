@@ -24,7 +24,6 @@ context('Примеры использования базовых методов
     it('wait', () => {
         cy.wait(3000)
         cy.wait('@room')
-        cy.wait('@message')
     })
 
 
